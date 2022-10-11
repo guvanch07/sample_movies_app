@@ -9,14 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var viewModel = MoviesViewModel()
+    @State var selection = 1
     
     var body: some View {
         NavigationView{
-            VStack{
-                MoviesSearchView(viewModel: viewModel)
-                MoviesListView(moviesViewModel: viewModel)
-            }.modifier(ContentModifier(viewModel: viewModel))
+            TabView(selection: $selection){
+                FirstMainPage()
+                    .tabItem {
+                        Image(systemName: "square.stack")
+                        
+                    }.tag(1)
+                SecondMainPage()
+                    .tabItem {
+                        Image(systemName: "square.stack")
+                        
+                    }.tag(2)
+            }.modifier(ContentModifier(viewModel: viewModel,isSelected: selection))
+            
         }
+            
     }
 }
 

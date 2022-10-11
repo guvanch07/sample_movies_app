@@ -10,7 +10,7 @@ import Combine
 
 final class MoviesViewModel: ObservableObject{
     
-    @Published var movies: [Movie] = []
+       @Published var movies: [Movie] = []
         @Published var searched = ""
         @Published var addMovieScreenPresented = false
     

@@ -11,4 +11,5 @@ protocol MoviesRepo {
     func getMoviesList(filter: String) -> [Movie]
     func createMovie(movie: Movie)
     func deleteMovie(movie: Movie)
+    func getPlacholderList(url: String, @e)-> PlaceholderModel
 }

@@ -9,21 +9,31 @@ import SwiftUI
 
 struct ContentModifier: ViewModifier {
     @ObservedObject var viewModel: MoviesViewModel
+    var isSelected: Int
     
     func body(content: Content) -> some View {
+        
         content
-            .navigationBarTitle("Movies")
-            .navigationBarItems(trailing: Button(
-                    action: {
-                        viewModel.addMovieScreenPresented.toggle()
-                    },
-                    label: {
-                        Image(systemName: "plus").imageScale(.large)
-                    })
+            .navigationBarTitle( isSelected == 1 ? "Movies" : "Music")
+        
+            .navigationBarItems(  trailing: isSelected == 1 ? Button(
+                action: {
+                    viewModel.addMovieScreenPresented.toggle()
+                },
+                label: {
+                    Image(systemName: "plus").imageScale(.large)
+                }) : nil
             )
+            
             .fullScreenCover(isPresented: $viewModel.addMovieScreenPresented, content: {
                 CreateMovieView(viewModel: viewModel)
-            })
+            }
+                             
+                             
+            )
+        
+        
+        
     }
     
 }

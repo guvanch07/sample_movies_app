@@ -11,6 +11,7 @@ struct CreateMovieView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel: MoviesViewModel
     
+    
     @State var name = ""
     @State var date = Date()
     
@@ -19,9 +20,11 @@ struct CreateMovieView: View {
             Form {
                 Section(header: Text("Movie")) {
                     TextField("Name", text: $name)
+                        .foregroundColor(.white)
+                    
                 }
                 DisclosureGroup("Date") {
-                    DatePicker("", selection: $date).datePickerStyle(GraphicalDatePickerStyle())
+                    DatePicker("\(date)", selection: $date).datePickerStyle(GraphicalDatePickerStyle())
                 }
             }
             .navigationBarTitle("Add", displayMode: .inline)

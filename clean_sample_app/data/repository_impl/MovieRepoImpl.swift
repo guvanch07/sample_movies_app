@@ -8,6 +8,15 @@
 import Foundation
 
 final class MoviesRepoImpl: MoviesRepo {
+    func getPlacholderList() async -> PlaceholderModel {
+        
+        guard URL(string: "https://jsonplaceholder.typicode.com/posts") != nil else {return []}
+        
+        
+            
+    }
+    
+    
     private static var moviesList: [Movie] = [
         Movie(name: "Forrest Gump", date: Date.from(string: "01-10-1993"), imageName: "fg"),
         Movie(name: "Kill Bill", date: Date.from(string: "01-10-2000"), imageName: "kb"),

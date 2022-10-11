@@ -18,7 +18,7 @@ struct MoviesSearchView: View {
                 Image(systemName: "magnifyingglass").foregroundColor(.gray)
                 TextField("Search...", text: $viewModel.searched)
                     .keyboardType(.webSearch)
-                    .foregroundColor(.white)
+                   
                 
                 if viewModel.searched != "" {
                     Button(action: {viewModel.searched = ""}){
