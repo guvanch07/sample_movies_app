@@ -8,16 +8,31 @@
 import SwiftUI
 
 struct SecondMainPage: View {
-    @StateObject var viewModel = MoviesViewModel()
-    @State var text = ""
-   
+    @StateObject private var vm = PlaceholderViewModel()
     var body: some View {
         VStack{
-            List {
-                ForEach(, id: \.id) {
-                    MovieRow(movie: $0)
+            if vm.isRefreshing {
+                ProgressView()
+            }else{
+                List {
+                    ForEach(vm.placeHolder,id:\.id) { p in
+                        Text(p.title)
+                    }
+                }
+                    .listStyle(.plain)
+            }
+            
+        }.task {
+            await vm.call()
+        }
+        .alert(isPresented: $vm.hasError, error: vm.error) {
+            Button{
+                Task{
+                    await vm.call()
                 }
                 
+            }label: {
+                Text("Retry")
             }
         }
     }

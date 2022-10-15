@@ -9,19 +9,17 @@ import Foundation
 
 
 
-
-protocol GetPlaceholderListUseCase {
-    func execute( completion: @escaping (PlaceholderModel) -> Void)
-}
-
-final class DefaultGetPlaceholderListUseCase: GetPlaceholderListUseCase {
+class GetPlaceholderListUseCase {
     let moviesRepo: MoviesRepo
     
     init(moviesRepo: MoviesRepo) {
         self.moviesRepo = moviesRepo
     }
     
-    func execute( completion: @escaping (PlaceholderModel) -> Void) {
-        completion(moviesRepo.getPlacholderList())
+    func execute() async throws -> [PlaceholderModel] {
+       
+        return try await moviesRepo.getPlacholderList()
     }
 }
+
+

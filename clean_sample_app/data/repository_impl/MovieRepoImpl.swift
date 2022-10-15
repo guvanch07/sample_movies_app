@@ -8,13 +8,34 @@
 import Foundation
 
 final class MoviesRepoImpl: MoviesRepo {
-    func getPlacholderList() async -> PlaceholderModel {
-        
-        guard URL(string: "https://jsonplaceholder.typicode.com/posts") != nil else {return []}
-        
-        
+    
+    
+    @MainActor
+    func getPlacholderList() async throws-> [PlaceholderModel] {
+        var arrayP: [PlaceholderModel] = []
+        let urlPath = "https://jsonplaceholder.typicode.com/posts"
+        if  let url = URL(string: urlPath){
+            do {
+                let (data,response) = try await URLSession.shared.data(from: url)
+                guard let response = response as? HTTPURLResponse,
+                      response.statusCode >= 200 && response.statusCode <= 299 else{
+                    throw UserError.failedToDecode
+                }
+                
+                let decoder = JSONDecoder()
+                guard let users = try? decoder.decode([PlaceholderModel].self, from: data) else{
+                    throw UserError.failedToDecode
+                }
+                arrayP = users
+            }catch{
+                throw UserError.custom(error: error)
+            }
             
+            
+        }
+        return arrayP
     }
+    
     
     
     private static var moviesList: [Movie] = [
@@ -46,3 +67,9 @@ private extension Date {
         return dateFormatter.date(from: string) ?? Date()
     }
 }
+
+
+
+
+
+

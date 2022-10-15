@@ -14,10 +14,7 @@ struct FirstMainPage: View {
         VStack{
             MoviesSearchView(viewModel: viewModel)
             MoviesListView(moviesViewModel: viewModel)
-            Button(action: {req.fetchData()}) {
-                Image(systemName: "arrow.down.heart.fill").foregroundColor(.red)
-                
-            }
+            
         }
         
     }

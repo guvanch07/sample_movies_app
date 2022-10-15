@@ -11,19 +11,29 @@ import Foundation
 import Combine
 
 final class PlaceholderViewModel: ObservableObject{
-    @Published var movies: [PlaceholderModel] = []
+    @Published var placeHolder: [PlaceholderModel] = []
+    @Published private(set) var isRefreshing = false
+    @Published var hasError = false
+    @Published  var error: UserError?
     
-    private var cancellable: AnyCancellable?
-    
-    init() {
-       
-            self.loadData()
+    private var getPlaceholerUseCase = GetPlaceholderListUseCase(
+        moviesRepo: MoviesRepoImpl()
         
-    }
+    )
     
-    private func loadData() {
-        getMoviesUseCase.execute(requestValue: GetMoviesListUseCaseRequestValue(filter: filter)) { [weak self] movies in
-            self?.movies = movies
+    func call() async {
+        isRefreshing = true
+        defer{isRefreshing = false}
+        do {
+            let usecase = try await getPlaceholerUseCase.execute()
+            self.placeHolder = usecase
+        }catch{
+            if let userErr = error as? UserError{
+                self.hasError = true
+                self.error = userErr
+            }
         }
+       
+        
     }
 }

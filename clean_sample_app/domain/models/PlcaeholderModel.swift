@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct PlaceholderElement: Codable {
+struct PlaceholderModel: Codable {
     let userID, id: Int
     let title, body: String
 
@@ -18,4 +18,4 @@ struct PlaceholderElement: Codable {
     }
 }
 
-typealias PlaceholderModel = [PlaceholderElement]
+
