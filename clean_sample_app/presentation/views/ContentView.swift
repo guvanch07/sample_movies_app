@@ -24,7 +24,7 @@ struct ContentView: View {
                         Image(systemName: "square.stack")
                         
                     }.tag(2)
-            }.modifier(ContentModifier(viewModel: viewModel,isSelected: selection))
+            }
             
         }
             

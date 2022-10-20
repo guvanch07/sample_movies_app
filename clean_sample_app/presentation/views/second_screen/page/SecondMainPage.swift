@@ -10,31 +10,42 @@ import SwiftUI
 struct SecondMainPage: View {
     @StateObject private var vm = PlaceholderViewModel()
     var body: some View {
-        VStack{
-            if vm.isRefreshing {
-                ProgressView()
-            }else{
-                List {
-                    ForEach(vm.placeHolder,id:\.id) { p in
-                        Text(p.title)
-                    }
-                }
-                    .listStyle(.plain)
-            }
+        NavigationView{
             
-        }.task {
-            await vm.call()
-        }
-        .alert(isPresented: $vm.hasError, error: vm.error) {
-            Button{
-                Task{
-                    await vm.call()
+            VStack{
+                if vm.isRefreshing {
+                    ProgressView()
+                }else{
+                    List {
+                        ForEach(vm.placeHolder,id:\.id) { p in
+                            
+                            NavigationLink{
+                                DetailListView(title: p.body)
+                                
+                            } label: {
+                                Text(p.title)
+                            }
+                            
+                        }
+                    }
+                        .listStyle(.plain)
                 }
                 
-            }label: {
-                Text("Retry")
+            }.task {
+                await vm.call()
+            }
+            .alert(isPresented: $vm.hasError, error: vm.error) {
+                Button{
+                    Task{
+                        await vm.call()
+                    }
+                    
+                }label: {
+                    Text("Retry")
+                }
             }
         }
+        
     }
 }
 
