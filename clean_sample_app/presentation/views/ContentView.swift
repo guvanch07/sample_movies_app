@@ -24,10 +24,16 @@ struct ContentView: View {
                         Image(systemName: "square.stack")
                         
                     }.tag(2)
+                
+                ThirdMainScreen()
+                    .tabItem {
+                        Image(systemName: "square.stack")
+                        
+                    }.tag(3)
             }
-            
+           
         }
-            
+       
     }
 }
 

@@ -16,7 +16,7 @@ struct FirstMainPage: View {
             MoviesListView(moviesViewModel: viewModel)
             
         }
-        
+        .navigationBarTitle("test",displayMode: .inline)
     }
 }
 

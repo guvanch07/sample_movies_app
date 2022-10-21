@@ -10,7 +10,7 @@ import SwiftUI
 struct MoviesListView: View {
     
     @ObservedObject var moviesViewModel: MoviesViewModel
-        
+    
         var body: some View {
             List {
                 ForEach(moviesViewModel.movies, id: \.id) {

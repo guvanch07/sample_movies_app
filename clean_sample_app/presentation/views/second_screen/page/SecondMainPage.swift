@@ -10,7 +10,7 @@ import SwiftUI
 struct SecondMainPage: View {
     @StateObject private var vm = PlaceholderViewModel()
     var body: some View {
-        NavigationView{
+       
             
             VStack{
                 if vm.isRefreshing {
@@ -28,7 +28,7 @@ struct SecondMainPage: View {
                             
                         }
                     }
-                        .listStyle(.plain)
+                    .listStyle(.plain)
                 }
                 
             }.task {
@@ -44,7 +44,7 @@ struct SecondMainPage: View {
                     Text("Retry")
                 }
             }
-        }
+            
         
     }
 }
