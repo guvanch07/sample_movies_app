@@ -16,7 +16,7 @@ struct CreateMovieView: View {
     @State var name = ""
     @State var author = ""
     @State var genre = ""
-    @State var rating = ""
+    @State var rating = 3
     @State var review = ""
     
     let genres = ["Fantacy","Horror","Kids","Romance","Mystery","Poetry"]
@@ -38,11 +38,7 @@ struct CreateMovieView: View {
                 }
                 Section{
                     TextField("review",text:$review)
-                    Picker("Rating",selection: $rating){
-                        ForEach(0..<6){
-                            Text(String($0))
-                        }
-                    }
+                    RatingView(rating: $rating)
                 } header: {
                     Text("write the review")
                 }
@@ -54,10 +50,10 @@ struct CreateMovieView: View {
                         newBook.id = UUID()
                         newBook.name = name
                         newBook.author = author
-                        newBook.rating = Int16(rating) ?? 0
+                        newBook.rating = Int16(rating)
                         newBook.review = review
-                        
                         try? moc.save()
+                        print("saved")
                         dismiss()
                     }
                 }

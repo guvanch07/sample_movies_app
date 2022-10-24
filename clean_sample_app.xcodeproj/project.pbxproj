@@ -34,6 +34,7 @@
 		FA5DCEB428F274E400E4DF79 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DCEB328F274E400E4DF79 /* Movie.swift */; };
 		FA5DCEB628F2753800E4DF79 /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DCEB528F2753800E4DF79 /* MovieRepository.swift */; };
 		FA5DCEB828F2757600E4DF79 /* MovieRepoImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DCEB728F2757600E4DF79 /* MovieRepoImpl.swift */; };
+		FAD30D5929066B8B0092629C /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD30D5829066B8B0092629C /* RatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		FA5DCEB328F274E400E4DF79 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		FA5DCEB528F2753800E4DF79 /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
 		FA5DCEB728F2757600E4DF79 /* MovieRepoImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepoImpl.swift; sourceTree = "<group>"; };
+		FAD30D5829066B8B0092629C /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +112,6 @@
 				FA5DCEB128F2730100E4DF79 /* MoviesSearchView.swift */,
 				FA046B0228F439D700EDAF95 /* MoviesListView.swift */,
 				FA046B0428F43A8A00EDAF95 /* MovieRow.swift */,
-				FA046B1228F4414600EDAF95 /* CreateMovieView.swift */,
 			);
 			path = widget;
 			sourceTree = "<group>";
@@ -134,7 +135,9 @@
 		FA146F5529025A2A00288358 /* third_secreen */ = {
 			isa = PBXGroup;
 			children = (
+				FA046B1228F4414600EDAF95 /* CreateMovieView.swift */,
 				FA146F5329025A2300288358 /* ThirdScreen.swift */,
+				FAD30D5829066B8B0092629C /* RatingView.swift */,
 			);
 			path = third_secreen;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				FA046B0928F43D6800EDAF95 /* GetMoviesListUseCase.swift in Sources */,
 				FA046B0D28F43E7800EDAF95 /* AddMovieUseCase.swift in Sources */,
 				FA046B0B28F43DF500EDAF95 /* DeleteMovieUseCase.swift in Sources */,
+				FAD30D5929066B8B0092629C /* RatingView.swift in Sources */,
 				FA046B0528F43A8A00EDAF95 /* MovieRow.swift in Sources */,
 				FA046B0328F439D700EDAF95 /* MoviesListView.swift in Sources */,
 				FA5DCE9628F2668C00E4DF79 /* ContentView.swift in Sources */,
