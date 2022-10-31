@@ -34,7 +34,9 @@
 		FA5DCEB428F274E400E4DF79 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DCEB328F274E400E4DF79 /* Movie.swift */; };
 		FA5DCEB628F2753800E4DF79 /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DCEB528F2753800E4DF79 /* MovieRepository.swift */; };
 		FA5DCEB828F2757600E4DF79 /* MovieRepoImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DCEB728F2757600E4DF79 /* MovieRepoImpl.swift */; };
+		FAA598D22908219000EBCAD2 /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA598D12908219000EBCAD2 /* EmojiRatingView.swift */; };
 		FAD30D5929066B8B0092629C /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD30D5829066B8B0092629C /* RatingView.swift */; };
+		FAD3FEC129105AE90076BD07 /* MapDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3FEC029105AE90076BD07 /* MapDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,7 +68,9 @@
 		FA5DCEB328F274E400E4DF79 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		FA5DCEB528F2753800E4DF79 /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
 		FA5DCEB728F2757600E4DF79 /* MovieRepoImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepoImpl.swift; sourceTree = "<group>"; };
+		FAA598D12908219000EBCAD2 /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
 		FAD30D5829066B8B0092629C /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		FAD3FEC029105AE90076BD07 /* MapDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 				FA046B1228F4414600EDAF95 /* CreateMovieView.swift */,
 				FA146F5329025A2300288358 /* ThirdScreen.swift */,
 				FAD30D5829066B8B0092629C /* RatingView.swift */,
+				FAA598D12908219000EBCAD2 /* EmojiRatingView.swift */,
 			);
 			path = third_secreen;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 			children = (
 				FA5DCEB328F274E400E4DF79 /* Movie.swift */,
 				FA046B2328F52ED300EDAF95 /* PlcaeholderModel.swift */,
+				FAD3FEC029105AE90076BD07 /* MapDataModel.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -387,6 +393,7 @@
 				FAD30D5929066B8B0092629C /* RatingView.swift in Sources */,
 				FA046B0528F43A8A00EDAF95 /* MovieRow.swift in Sources */,
 				FA046B0328F439D700EDAF95 /* MoviesListView.swift in Sources */,
+				FAA598D22908219000EBCAD2 /* EmojiRatingView.swift in Sources */,
 				FA5DCE9628F2668C00E4DF79 /* ContentView.swift in Sources */,
 				FA146F5A290271F900288358 /* DataController.swift in Sources */,
 				FA146F5429025A2300288358 /* ThirdScreen.swift in Sources */,
@@ -394,6 +401,7 @@
 				FA046B0728F43BF500EDAF95 /* MoviesViewModel.swift in Sources */,
 				FA046B1D28F50B9600EDAF95 /* FirstMainPage.swift in Sources */,
 				FA046B1528F4586700EDAF95 /* NetworkHandler.swift in Sources */,
+				FAD3FEC129105AE90076BD07 /* MapDataModel.swift in Sources */,
 				FA146F5829026FB100288358 /* Bookwarm.xcdatamodeld in Sources */,
 				FA5DCEB828F2757600E4DF79 /* MovieRepoImpl.swift in Sources */,
 				FA44406028FA94A8006B3C1A /* ErrorHandler.swift in Sources */,

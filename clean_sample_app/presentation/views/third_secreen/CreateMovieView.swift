@@ -53,6 +53,7 @@ struct CreateMovieView: View {
                         newBook.rating = Int16(rating)
                         newBook.review = review
                         try? moc.save()
+                        
                         print("saved")
                         dismiss()
                     }

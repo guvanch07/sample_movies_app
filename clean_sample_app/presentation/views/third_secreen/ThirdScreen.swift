@@ -50,14 +50,19 @@ struct BookRow: View {
     var book: Book
     
     var body: some View {
-        VStack{
-            Text("Name:")
-                .font(.caption)
-                .foregroundColor(.secondary)
-            Text(book.author ?? "")
-                .font(.system(size: 15, weight: .bold))
+        NavigationLink{
             Text(book.name ?? "")
-            RatingView(rating: .constant(Int(book.rating)))
+        }label: {
+            HStack{
+                EmojiRatingView(rating: book.rating)
+                    .font(.largeTitle)
+                VStack(alignment: .leading){
+                    Text(book.name ?? "")
+                        .font(.headline)
+                    Text(book.author ?? "")
+                        .foregroundColor(.secondary)
+                }
+            }
         }
     }
     
