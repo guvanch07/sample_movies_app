@@ -33,13 +33,17 @@ struct FirstMainPage: View {
         Map(coordinateRegion: $region,annotationItems: places) {  place in
             
             MapMarker(coordinate: place.coordinate)
+            
+                
         }
         
         .navigationTitle("").navigationBarHidden(true)
         .sheet(item: $isOpen){ location in
             Text(location.name)
         }
+        
     }
+        
 }
 
 struct SecondMainPage_Previews: PreviewProvider {
